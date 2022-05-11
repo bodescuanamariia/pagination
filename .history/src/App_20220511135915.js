@@ -13,10 +13,6 @@ function App() {
     }
   }, [loading, page]);
 
-  const handlePage = (index) => {
-    setPage(index);
-  };
-
   return (
     <main>
       <div className="section-title">
@@ -24,21 +20,17 @@ function App() {
         <div className="underline"></div>
       </div>
       <section className="followers">
-        <div className="container">
+        {/* <div className="container">
           {followers.map((follower) => {
             return <Follower key={follower.id} {...follower} />;
-          })}
+          })} */}
         </div>
         {!loading && (
           <div className="btn-container">
             {followers.map((item, index) => {
               return (
-                <button
-                  className={`page-btn ${index === page ? " active" : null}`}
-                  key={index}
-                  onClick={() => handlePage(index)}
-                >
-                  {index + 1}
+                <button className="page-btn" key={index}>
+                  button
                 </button>
               );
             })}

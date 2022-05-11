@@ -11,11 +11,7 @@ function App() {
     if (loading) {
       return setFollowers(data[page]);
     }
-  }, [loading, page]);
-
-  const handlePage = (index) => {
-    setPage(index);
-  };
+  }, [loading]);
 
   return (
     <main>
@@ -29,21 +25,7 @@ function App() {
             return <Follower key={follower.id} {...follower} />;
           })}
         </div>
-        {!loading && (
-          <div className="btn-container">
-            {followers.map((item, index) => {
-              return (
-                <button
-                  className={`page-btn ${index === page ? " active" : null}`}
-                  key={index}
-                  onClick={() => handlePage(index)}
-                >
-                  {index + 1}
-                </button>
-              );
-            })}
-          </div>
-        )}
+        {loading && <button className="btn-container"></button>}
       </section>
     </main>
   );

@@ -34,7 +34,7 @@ function App() {
             {followers.map((item, index) => {
               return (
                 <button
-                  className={`page-btn ${index === page ? " active" : null}`}
+                  className="page-btn"
                   key={index}
                   onClick={() => handlePage(index)}
                 >
